@@ -40,10 +40,10 @@ export enum ActorType {
 	Wall = 'wall'
 }
 
-export function getClassFromChar(
-	char: 'o' | '#' | '+' | '=' | '|' | '<' | '>' | '^' | 'v' | '.'
-): ActorType {
+export function getClassFromChar(char: string): ActorType {
 	switch (char) {
+		case '@':
+			return ActorType.Player;
 		case 'o':
 			return ActorType.Coin;
 		case '#':
