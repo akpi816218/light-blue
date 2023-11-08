@@ -33,44 +33,51 @@ export class Point {
 	/**
 	 * Move the point up
 	 * @param {number} amount The amount to move the point
-	 * @returns {Point} The new point
+	 * @returns {this} The updated point
 	 */
-	up(amount: number): Point {
-		return new Point(this.x, this.y - amount);
+	up(amount: number): this {
+		this.y -= amount;
+		return this;
 	}
 
 	/**
 	 * Move the point down
 	 * @param {number} amount The amount to move the point
-	 * @returns {Point} The new point
+	 * @returns {this} The updated point
 	 */
-	down(amount: number): Point {
-		return new Point(this.x, this.y + amount);
+	down(amount: number): this {
+		this.y += amount;
+		return this;
 	}
 
 	/**
 	 * Move the point left
 	 * @param {number} amount The amount to move the point
-	 * @returns {Point} The new point
+	 * @returns {this} The updated point
 	 */
-	left(amount: number): Point {
-		return new Point(this.x - amount, this.y);
+	left(amount: number): this {
+		this.x -= amount;
+		return this;
 	}
 
 	/**
 	 * Move the point right
 	 * @param {number} amount The amount to move the point
-	 * @returns {Point} The new point
+	 * @returns {this} The updated point
 	 */
-	right(amount: number): Point {
-		return new Point(this.x + amount, this.y);
+	right(amount: number): this {
+		this.x += amount;
+		return this;
 	}
 
-	plus(other: Point) {
-		return new Point(this.x + other.x, this.y + other.y);
-	}
-
-	multiply(factor: number) {
-		return new Point(this.x * factor, this.y * factor);
+	/**
+	 * Scale the point away from the origin
+	 * @param {number} factor The factor to move the point by
+	 * @returns {this} The updated point
+	 */
+	multiply(factor: number): this {
+		this.x *= factor;
+		this.y *= factor;
+		return this;
 	}
 }

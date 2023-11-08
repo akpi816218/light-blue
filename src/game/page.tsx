@@ -1,16 +1,10 @@
-import RootLayout from '@/components/Layout';
 import { GameState } from '@/lib/GameState';
 import { Level } from '@/lib/Level';
 import { LevelManager } from '@/lib/LevelManager';
 import { createRoot } from 'react-dom/client';
 
 createRoot(document.getElementById('root')!).render(
-	<RootLayout>
-		<div
-			className="w-screen h-screen flex flex-col items-center justify-center font-semibold text-3xl"
-			id="game"
-		/>
-	</RootLayout>
+	<div id="game" className="w-screen h-screen p-8 font-semibold bg-sky-400" />
 );
 
 window.addEventListener('load', () => {
@@ -24,13 +18,17 @@ window.addEventListener('load', () => {
 				0,
 				`......................
 ..#................#..
-..#..............=.#..
+..#................#..
 ..#.........o.o....#..
 ..#.@......#####...#..
 ..#####............#..
 ......#++++++++++++#..
 ......##############..
-......................`
+......................`,
+				{
+					right: 3,
+					down: 4
+				}
 			)
 		])
 	);

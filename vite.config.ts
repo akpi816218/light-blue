@@ -18,7 +18,7 @@ export default defineConfig({
 			input: {
 				main: resolve(join(__dirname, 'src', 'index.html')),
 				404: resolve(join(__dirname, 'src', '404.html')),
-				card: resolve(join(__dirname, 'src', 'card', 'index.html'))
+				game: resolve(join(__dirname, 'src', 'game', 'index.html'))
 			}
 		},
 		outDir: '../dist'
